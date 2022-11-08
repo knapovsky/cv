@@ -55,11 +55,11 @@
 %\usepackage[defaultsans]{droidsans}
 %\usepackage[default]{comfortaa}
 %\usepackage{cmbright}
-\usepackage[default]{raleway}
+%\usepackage[default]{raleway}
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
+\usepackage[thin]{roboto} 
 
 % set font default
 \renewcommand*\familydefault{\sfdefault} 	
@@ -67,6 +67,9 @@
 
 % more font size definitions
 \usepackage{moresize}
+
+% clickable links
+\usepackage{hyperref}
 
 %----------------------------------------------------------------------------------------
 %	FONT AWESOME ICONS
@@ -277,29 +280,27 @@
 	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.35\mpwidth]{\textcolor{white}{#1}}} \\
 			\textcolor{maincol}{\textbf{#3}} & \\
 		\end{tabular*}\\[8pt]
-	
+
 		\ifthenelse{\isempty{#4}}{}{
-			\cvtext{#4}\\
+			\cvtext{#4}
 		}
 	}
 
 	\ifthenelse{\isempty{#5}}{}{
-		\vspace{9pt}
+		%\vspace{5pt}
 		{#5}
 	}
 
 	\ifthenelse{\isempty{#6}}{}{
-		\vspace{9pt}
-		\cvtext{\textbf{Technologies include:}}\\
+		\cvtext{\textbf{Technologies}}
 		{#6}
 	}
 
 	\ifthenelse{\isempty{#7}}{}{
-		\vspace{9pt}
-		\cvtext{\textbf{Achievements include:}}\\
+		\cvtext{\textbf{References}}
 		{#7}
 	}
-	\vspace{14pt}
+	\vspace{10pt}
 }
 
 %----------------------------------------------------------------------------------------
@@ -317,12 +318,11 @@
 	\ifthenelse{\isempty{#2}}{}{
 	\textcolor{darkcol} {\cvtext{\textbf{#2}} }
 	}
-
 	\ifthenelse{\isempty{#3}}{}{
-		\cvtext{{ \textcolor{darkcol} {#3} }}\\
+		\cvtext{{ \textcolor{darkcol} {#3} }}
 	}
 
-	\cvtext{#4}\\[14pt]
+%	\cvtext{#4}\\[14pt]
 }
 
 %---------------------------------------------------------------------------------------
@@ -362,7 +362,7 @@
 %---------------------------------------------------------------------------------------
 %	META SKILLS
 %----------------------------------------------------------------------------------------
-\cvsection{MAIN IT SKILLS}
+\cvsection{MAIN SKILLS}
 
 \cvskill{HTML/CSS/SASS/LESS} {17 yrs} {1} \\[-2pt]
 
@@ -370,7 +370,9 @@
 
 \cvskill{Linux} {15 yrs} {0.8} \\[-2pt]
 
-\cvskill{Docker} {3 yrs} {0.7} \\[-2pt]
+\cvskill{Docker} {6 yrs} {0.7} \\[-2pt]
+
+\cvskill{Wordpress} {11 yrs} {0.7} \\[-2pt]
 
 \cvskill{GIT} {10 yrs} {0.7} \\[-2pt]
 
@@ -380,12 +382,14 @@
 
 \cvskill{C, C++, Java, PHP} {10 yrs} {0.5} \\[-2pt]
 
+\cvskill{React} {2 yrs} {0.3} \\[-2pt]
+
 
 
 \vfill\null
 \cvsection{CONTACT}
 	
-\icontext{MapMarker}{12}{50 Sir John Young Crescent\\2011 Woolloomooloo, NSW}{black}\\[6pt]
+\icontext{MapMarker}{12}{63 Walcott St\\6050 Mount Lawley, WA}{black}\\[6pt]
 \icontext{MobilePhone}{12}{+61 475 721 200}{black}\\[6pt]
 \iconemail{Envelope}{12}{martin@knapovsky.com}{martin@knapovsky.com}{black}\\[6pt]
 
@@ -399,8 +403,13 @@
 \cvsection{EDUCATION}
 
 \cvmetaevent
+{2021 - 2022}
+{Advanced Diploma of Leadership and Management}
+{Albright Institute Melbourne}
+
+\cvmetaevent
 {2014 - 2017}
-{Ing. in Cognitive Informatics}
+{Ing. Cognitive Informatics}
 {University of Economics, Prague}
 {The primary goal of cognitive informatics is to develop computing systems that work best with how humans process information, creating more seamless human-systems integration. It is an interdisciplinary field that connects computer science, artificial intelligence, machine learning and interface design with human anatomy, physiology, neurology, psychology and philosophy.
 
@@ -411,85 +420,85 @@ Cognitive informatics was my major field of study, as a minor field I've chosen 
 
 \cvmetaevent
 {2008 - 2012}
-{Bc. in Informatics}
+{Bc. Informatics}
 {University of Technology, Brno}
 {I've learned basics of many fields of IT - programming in languages like C, C++, Java, Python, Perl, using several types of databases, implementing algorithms, patterns, running simulations, rendering 3D graphics, analyzing voice, designing and testing interfaces, computer networking etc.
 The topic of the bachelor's thesis was to create a 3D game that would run in a web browser and that would use a graphics card via WebGL technology.}
 
-\vfill\null
+%\vfill\null
 %\cvqrcode{0.7}
 
 %---------------------------------------------------------------------------------------
 %	CERTIFICATION
 %----------------------------------------------------------------------------------------
-\newpage
+%\newpage
 \cvsection{CERTIFICATIONS}
 
 \cvmetaevent
 {CCNA Exploration: Network Fundamentals}
-{}
+{Cisco}
 {}
 {}
 
 \cvmetaevent
 {CCNA Exploration: Routing Protocols and Concepts}
-{}
+{Cisco}
 {}
 {}
 
 \cvmetaevent
 {CCNA Exploration: LAN Switching and Wireless}
-{}
+{Cisco}
 {}
 {}
 
 
 \cvmetaevent
 {CCNA Exploration: Accessing the WAN}
-{}
+{Cisco}
 {}
 {}
 
-\cvmetaevent
-{First Aid Certificate}
-{}
-{}
-{}
+%\cvmetaevent
+%{First Aid Certificate}
+%{Red Cross Czech Republic}
+%{}
+%{}
 
 \cvmetaevent
 {EFR (Emergency First Response)}
-{}
-{}
-{}
-
-\cvmetaevent
-{Driving License A2, B}
-{}
+{PADI}
 {}
 {}
 
 \cvmetaevent
-{TEFL - Teaching English as a foreign language}
-{}
+{Driving License A, B}
+{AU}
 {}
 {}
 
+%\cvmetaevent
+%{TEFL - Teaching English as a foreign language}
+%{Global TEFL}
+%{}
+%{}
+
 \cvmetaevent
-{CAE - C1 Cambridge English}
-{}
+{CAE - C1}
+{Cambridge English}
 {}
 {}
 
 \cvmetaevent
 {IELTS 8.5 English Certification}
-{}
+{British Council}
 {}
 {}
 
 \vfill
 %\cvqrcode{0.7}
 
-\newpage
+%\newpage
 \mbox{} % hotfix to place qrcode on the bottom when there are not other elements
 \vfill
 %\cvqrcode{0.7}
@@ -503,104 +512,96 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 	\begin {center}
 		\Huge{ \textbf{ \textcolor{white}{ \uppercase{ ING. MARTIN KNAPOVSKÝ } } } } \\[-20pt]
 		\textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[4pt]
-		\large{ \textcolor{white} {Freelance IT Consultant and Developer} }
+		\large{ \textcolor{white} {Curriculum Vitae} }
 	\end {center}
 \end{minipage}} \\[14pt]
 \vspace{-12pt}
 
 %---------------------------------------------------------------------------------------
 %	PROFILE
+
 %----------------------------------------------------------------------------------------
-\vfill\null
 \cvsection{PROFILE}
 
-\cvtext{32 years old IT consultant and developer with strong theoretical skills and a passion for open-source software and cloud services.\\
-
-I'm specialized in working with Linux virtual private servers and deploying self-hosted cloud services for automation and a safe and private way to store personal/company data that is easily accessible to users from anywhere via a web browser or a mobile application.\\
-
-Being originally from Czech Republic granted me the ability to speak Czech, although my main language has been English for past 4 years and I feel quite confident using this language in any kind of situation.
-
-}
+\cvtext{33 years old computer engineer with strong practical skills in website development and linux server administration. Currently searching for a position in Perth, Australia.}
 
 %---------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
-\vfill\null
+
 \cvsection{WORK EXPERIENCE}
 
 \cvevent
 	{Feb 2017 - NOW}
-	{IT Consultant and Developer}
+	{IT Consultant}
 	{Freelance}
-	{As a freelancer, I've participated in several different roles. I'm using the skills I've learned in my previous jobs and studies and I'm combining them with my passion for photography and video. I can provide a complete online solution for small companies and individuals like server installation, hosting, web design, content creation or marketing.}
+	{As a freelancer I've helped many companies to design and implement their complete digital identity. My passion is to share my knowledge about private self-hosted services as an alternative to currently available public services.
+	I've worked in various environments in countries like UK, Czech Republic, Iceland, New Zealand, Australia, Malaysia and Indonesia and I'm self-sufficient in finding optimal solutions to the tasks in front of me.}
 	{\cvlist{
-		\item Deploying self-hosted cloud services like encrypted private email, cloud storage, git, private password manager, CRM, hosting, etc.
-		\item System administration (linux)
-		\item Building websites on top of Wordpress framework
-		\item Logo design
+		\item Website development - Wordpress CMS, React framework
+		\item Self-hosted cloud services like encrypted private email, cloud storage, git, private password managers, CRM, etc.
+		\item System administration (linux) and website hosting
+		\item Graphical design
+		\item Commercial Photography and Videography
 		\item Marketing and SEO
 		\item PC building, HW repairs
-		\item Network infrastructure design and deployment
+		\item Network infrastructure - wired/wireless installations, VLAN, VPN, Cisco IOS, OpenWRT, QoS, Network services
 	}}
 	{\cvlist {
-		\item Docker, Kubernetes, Ansible, CapRover, Python, CSS, SASS, LESS, HTML5, JavaScript, GIT, PHP, Nginx, Jenkins
+		\item Docker, Kubernetes, Ansible, Python, Wordpress, React, SASS, HTML5, JavaScript, GIT, PHP, Nginx
 	}}
-	{\cvlist{
-		\item I'm able to offer an alternative solution to companies like Google, Microsoft or Apple for storing personal/company data privately and securely on their own infrastructure. 
-		\item I've helped many businesses to promote themselves online and boost their revenue. 
-		\item I've worked in various environments (AU, NZ, UK, Iceland, Malaysia, Indonesia, Czechia). 
+	{\cvlist {
+		\item \href{https://www.nejenhra.cz}{NejenHra}, \href{https://lacasamiarestaurant.co.uk}{La Casa Mia}, \href{https://auto.kolexcom.cz}{KolexCOM}, \href{https://www.ippkid.cz}{IPPKID}, \href{https://heritagesixteen.com}{Heritage Sixteen}, \href{https://www.oxfordgroup.cz}{Oxford Group}, \href{https://www.skogur.is/en}{Skograektin}
 	}}
 	
-	
-\vfill\null
 \cvevent
 	{Sep 2015 - Feb 2017}
 	{Research Assistant, University of Economics, Prague}
 	{Management}
-	{Administrative function at the university that I was studying.}
+	{I've learned how to coordinate group of people working on various project at academic environment}
 	{\cvlist{
-		\item Communication with the Czech government
+		\item Communication with the government of Czech Republic
 		\item University project management
 		\item Coordination of student activities
 		\item Maintenance of existing infrastructure
 	}}
-	{}
-	{}
+	{\cvlist {
+		\item Microsoft Project, ERP
+	}}
+	{\cvlist {
+		\item \href{mailto:vaclav.repa@vse.cz}{prof. Ing. Václav Řepa, CSc.}
+	}}
 
-\vfill\null
 \cvevent
 	{Sep 2013 - Jan 2015}
 	{Front-End Developer}
 	{Webtoad.cz}
-	{Responsible for design and implementation of user interfaces for custom web projects built on top of Nette framework.}
+	{Responsible for design and implementation of user interfaces for custom web projects built on top of Nette PHP framework. Working for international companies like \href{https://www.douwe-egberts.com}{Douwe Egberts} and main Czech photography portal \href{fotoaparat.cz}{Fotoaparat}}
 	{\cvlist{
-		\item Selection of future-proof tools and infrastructure maintenance
-		\item Design coding
-		\item Quality assurance in terms of documentation
+		\item Front-end coding
+		\item Front-end team lead
+		\item Quality assurance and documentation
 	}}
 	{\cvlist {
 		\item CSS, SASS, LESS, HTML5, JavaScript, GIT, PHP, Nginx, Jenkins
 	}}
 	{\cvlist{
-		\item Working for international companies like Douwe Egberts and main Czech photography portal fotoaparat.cz.
+		\item \href{mailto:adam@webtoad.dev}{Adam Karnet}
 	}}
 
-\vfill\null
 \cvevent
 	{Jun 2013 - Jan 2014}
 	{Front-End and Back-End Developer}
 	{Webnaut.cz}
 	{Building e-commerce websites on top of PrestaShop framework.}
 	{\cvlist{
-		\item Design and implementation of update and deployment process automaton
-		\item Quality assurance by design of infrastructure monitoring, centralized logging solutions and documentation
-	}}
-	{\cvlist {
-		\item PrestaShop Framework, PHP, HTML5, CSS, LESS, GIT, JavaScript
-		\item Google Analytics
-	}}
-	{\cvlist{
+		\item Front-end coding and back-end implementation
+		\item Quality assurance, infrastructure monitoring, centralized logging solutions and documentation
 		\item Custom reusable modules for PrestaShop
+	}}
+	{}
+	{\cvlist{
+		\item \href{mailto:ryvola@webnaut.cz}{Tomáš Ryvola}
 	}}
 
 \vfill\null
@@ -609,20 +610,29 @@ Being originally from Czech Republic granted me the ability to speak Czech, alth
 	{Back-End Developer}
 	{Nume.cz}
 	{Building an auction portal for numismatics}
+	{\cvlist{
+		\item Back-end programmer in Nette PHP Framework
+	}}
 	{}
-	{}
-	{}
+	{\cvlist{
+		\item \href{mailto:xklima@fel.cvut.cz}{Martin Klima}
+	}}
+
 	
-\vfill\null
+	
 \cvevent
 	{Sep 2011 - May 2012}
 	{3D Logical Game in Javascript}
 	{Bachelor's thesis for Red Hat, Brno}
-	{Developing a 3D clone of \textit{Berusky 3D} game on top of WebGL technology for running the game on-demand in a web browser}
-	{}
-	{}
+	{Developing a 3D clone of \textit{Berusky 3D} game on top of WebGL technology for running the game on-demand in a web browser.}
 	{\cvlist{
-		\item 3D game accelerated on a graphics card running in a web browser that downloads it's updated data straight from the server and stores it in a local storage. 
+		\item Web 3D game accelerated on a graphics card
+	}}
+	{\cvlist{
+		\item WebGL, GLSL, JavaScript, Local Storage
+	}}
+	{\cvlist{
+		\item  \href{mailto:stransky@redhat.com}{Martin Stranky}, source code available on demand
 	}}
 
 
