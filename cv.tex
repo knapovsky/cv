@@ -70,6 +70,16 @@
 
 % clickable links
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=maincol,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+%\let\orighref\href
+%\renewcommand{\href}[2]{\orighref{#1}{#2\,\faExternalLink}}
 
 %----------------------------------------------------------------------------------------
 %	FONT AWESOME ICONS
@@ -162,7 +172,7 @@
 
 %for drawing graphics		
 \usepackage{tikz}				
-\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usetikzlibrary{shapes, backgrounds, mindmap, trees}
 
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
@@ -364,23 +374,23 @@
 %----------------------------------------------------------------------------------------
 \cvsection{MAIN SKILLS}
 
-\cvskill{HTML/CSS/SASS/LESS} {17 yrs} {1} \\[-2pt]
+\cvskill{HTML/CSS/SASS/LESS} {21 yrs} {0.9} \\[-2pt]
 
-\cvskill{Networking} {15 yrs} {0.8} \\[-2pt]
+\cvskill{Computer Networking} {21 yrs} {0.8} \\[-2pt]
 
-\cvskill{Linux} {15 yrs} {0.8} \\[-2pt]
+\cvskill{Linux/Windows Server} {15 yrs} {0.8} \\[-2pt]
+
+\cvskill{Wordpress} {16 yrs} {0.8} \\[-2pt]
+
+\cvskill{Hypervisors} {12 yrs} {0.8} \\[-2pt]
 
 \cvskill{Docker} {6 yrs} {0.7} \\[-2pt]
-
-\cvskill{Wordpress} {11 yrs} {0.7} \\[-2pt]
-
-\cvskill{GIT} {10 yrs} {0.7} \\[-2pt]
 
 \cvskill{HW (Building, Repairs)} {15 yrs} {0.6} \\[-2pt]
 
 \cvskill{JavaScript, Python} {11 yrs} {0.6} \\[-2pt]
 
-\cvskill{C, C++, Java, PHP} {10 yrs} {0.5} \\[-2pt]
+\cvskill{C, C++, Java, PHP} {17 yrs} {0.5} \\[-2pt]
 
 \cvskill{React} {2 yrs} {0.3} \\[-2pt]
 
@@ -390,16 +400,18 @@
 \cvsection{CONTACT}
 	
 \icontext{MapMarker}{12}{63 Walcott St\\6050 Mount Lawley, WA}{black}\\[6pt]
-\icontext{MobilePhone}{12}{+61 475 721 200}{black}\\[6pt]
-\iconemail{Envelope}{12}{martin@knapovsky.com}{martin@knapovsky.com}{black}\\[6pt]
+\icontext{Phone}{12}{+61 475 721 200}{black}\\[6pt]
+\icontext{Envelope}{12}{\href{mailto:martin@knapovsky.com}{martin@knapovsky.com}}{black}\\[6pt]
+\icontext{Globe}{12}{\href{https://www.knapovsky.com}{knapovsky.com}}{black}\\[6pt]
+\icontext{Github}{12}{\href{https://github.com/knapovsky}{knapovsky}}{black}\\[6pt]
 
-\vfill\null
+%\vfill\null
 %\cvqrcode{0.7}
 
 %---------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-\newpage
+%\newpage
 \cvsection{EDUCATION}
 
 \cvmetaevent
@@ -495,6 +507,24 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 {}
 {}
 
+\cvmetaevent
+{Sophos Firewall Certified Engineer v 19.5 (ET80)}
+{Sophos}
+{}
+{}
+
+\cvmetaevent
+{Sophos Firewall Certified Technician v 19.5 (S80)}
+{Sophos}
+{}
+{}
+
+\cvmetaevent
+{3CX Advanced Certified Engineer}
+{3CX}
+{}
+{}
+
 \vfill
 %\cvqrcode{0.7}
 
@@ -523,7 +553,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 %----------------------------------------------------------------------------------------
 \cvsection{PROFILE}
 
-\cvtext{33 years old computer engineer with strong practical skills in website development and linux server administration. Currently searching for a position in Perth, Australia.}
+\cvtext{35 years old senior project engineer with strong practical skills in Windows/Linux server deployment and maintenance, networking and web development.}
 
 %---------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
@@ -532,33 +562,78 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 \cvsection{WORK EXPERIENCE}
 
 \cvevent
+	{Jul 2023 - NOW}
+	{Senior Project Engineer, Perth, WA, Australia}
+	{Newtrend IT}
+	{Planning, managing and implementing projects for MSP in Perth}
+	{\cvlist{
+		\item Network infrastructure installation, upgrades, redesign
+		\item Phone systems instalation, migration
+		\item Cloud migrations
+		\item SharePoint sites management
+		\item New company office setups, site to site connections
+		\item New Microsoft 365 tenant setups
+		\item Bulding servers, installing/managing hypervisors
+		\item Server OS and services installations, virtual machine migrations
+		\item Installations of terminal servers, file servers, database servers, etc. 
+		\item Microsoft Azure infrastructure development
+		\item Remote site maintenance (\href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://holdfastaust.com.au}{Holdfast}, \href{http://mccorrybrown.com.au}{McCorry Brown})
+	}}
+	{\cvlist {
+		\item Microsoft Windows/Server, Linux, SharePoint, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV, XCP-ng, pfSense, Fortinet, Fortigate, Cisco, 3CX phone system}}
+	{\cvlist {
+		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}, \href{mailto:adele.gott@studioschools.edu.au}{Adele Gott, Principal of Studio Schools Australia}
+		\item \href{https://www.newtowntoyota.com.au}{Toyota New Town}, \href{https://instantproducts.com.au}{Instant Products Group}, \href{http://gmminingelectrics.com.au}{GM Mining Electrics}, \href{https://www.linkedin.com/company/polaris-engineering-services-pty-ltd/?originalSubdomain=au}{Polaris Engineering}, \href{https://xpressfreightmanagement.com.au}{Xpress Freight Management}
+	}}
+
+\cvevent
+	{Jan 2023 - Jun 2023}
+	{Technical Onsite Analyst, Perth, WA, Australia}
+	{Newtrend IT}
+	{Mobile technician role for one of the biggest managed service providers in Perth, WA}
+	{\cvlist{
+		\item System and network administration
+		\item Managing users in on-premise/cloud environment
+		\item Asset management
+		\item Hardware installations, upgrades and repairs on-site
+		\item Responding to service outages
+		\item On-site technician in remote areas
+	}}
+	{\cvlist {
+		\item Microsoft Windows/Server, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV
+	}}
+	{\cvlist {
+		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}
+		\item \href{https://peoplekind.org.au}{PeopleKind Group}, \href{https://ruah.org.au}{Ruah Community Services}, \href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://foraco.com}{Foraco}
+	}}
+
+\cvevent
 	{Feb 2017 - NOW}
-	{IT Consultant}
+	{IT Consultant, Global}
 	{Freelance}
-	{As a freelancer I've helped many companies to design and implement their complete digital identity. My passion is to share my knowledge about private self-hosted services as an alternative to currently available public services.
-	I've worked in various environments in countries like UK, Czech Republic, Iceland, New Zealand, Australia, Malaysia and Indonesia and I'm self-sufficient in finding optimal solutions to the tasks in front of me.}
+	{As a freelancer I've helped many companies to design and implement their complete digital identity. I've worked in various environments in UK, Czech Republic, Iceland, New Zealand, Australia, Malaysia and Indonesia.}
 	{\cvlist{
 		\item Website development - Wordpress CMS, React framework
-		\item Self-hosted cloud services like encrypted private email, cloud storage, git, private password managers, CRM, etc.
-		\item System administration (linux) and website hosting
+		\item Deployment of cloud services like encrypted private email, cloud storage, git, private password managers, CRM, etc.
+		\item Linux/FreeBSD/Windows system administration and website hosting
 		\item Graphical design
-		\item Commercial Photography and Videography
+		\item Commercial photography and videography
 		\item Marketing and SEO
 		\item PC building, HW repairs
-		\item Network infrastructure - wired/wireless installations, VLAN, VPN, Cisco IOS, OpenWRT, QoS, Network services
+		\item Network infrastructure planning and implementation
 	}}
 	{\cvlist {
-		\item Docker, Kubernetes, Ansible, Python, Wordpress, React, SASS, HTML5, JavaScript, GIT, PHP, Nginx
+		\item Docker, Kubernetes, Ansible, Python, Wordpress, React, SASS, HTML5, JavaScript, GIT, PHP, Nginx, Microsoft Azure, VMWare ESXi, XCP-ng, Proxmox, Sophos, pfSense, Cisco IOS, Unifi, OpenWRT, Tailgate/Wireguard
 	}}
 	{\cvlist {
-		\item \href{https://www.nejenhra.cz}{NejenHra}, \href{https://lacasamiarestaurant.co.uk}{La Casa Mia}, \href{https://auto.kolexcom.cz}{KolexCOM}, \href{https://www.ippkid.cz}{IPPKID}, \href{https://heritagesixteen.com}{Heritage Sixteen}, \href{https://www.oxfordgroup.cz}{Oxford Group}, \href{https://www.skogur.is/en}{Skograektin}
+		\item \href{https://www.nejenhra.cz}{NejenHra}, \href{https://lacasamiarestaurant.co.uk}{La Casa Mia}, \href{https://auto.kolexcom.cz}{KolexCOM}, \href{https://www.ippkid.cz}{IPPKID}, \href{https://heritagesixteen.com}{Heritage Sixteen}, \href{https://www.oxfordgroup.cz}{Oxford Group}, \href{https://perthdishwashers.com.au}{Perth Dishwashers}, \href{https://www.papafeta.com.au}{Papa Feta Ouzeria}
 	}}
 	
 \cvevent
 	{Sep 2015 - Feb 2017}
-	{Research Assistant, University of Economics, Prague}
-	{Management}
-	{I've learned how to coordinate group of people working on various project at academic environment}
+	{Research Assistant, Prague, Czech Republic}
+	{University of Economics}
+	{I've learned how to coordinate group of people working on various academic projects}
 	{\cvlist{
 		\item Communication with the government of Czech Republic
 		\item University project management
@@ -566,17 +641,17 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item Maintenance of existing infrastructure
 	}}
 	{\cvlist {
-		\item Microsoft Project, ERP
+		\item Microsoft Project, ERP, Team leading
 	}}
 	{\cvlist {
-		\item \href{mailto:vaclav.repa@vse.cz}{prof. Ing. Václav Řepa, CSc.}
+		\item \href{mailto:vaclav.repa@vse.cz}{prof. Ing. Václav Řepa, CSc., VSE Prague}
 	}}
 
 \cvevent
-	{Sep 2013 - Jan 2015}
-	{Front-End Developer}
-	{Webtoad.cz}
-	{Responsible for design and implementation of user interfaces for custom web projects built on top of Nette PHP framework. Working for international companies like \href{https://www.douwe-egberts.com}{Douwe Egberts} and main Czech photography portal \href{fotoaparat.cz}{Fotoaparat}}
+	{Jan 2014 - Jan 2015}
+	{Front-End Developer, Prague, Czech Republic}
+	{\href{https://webtoad.cz}{Webtoad.cz}}
+	{Responsible for design and implementation of user interfaces for custom web projects built on top of \href{https://nette.org}{Nette PHP framework}. Working for international companies like \href{https://www.douwe-egberts.com}{Douwe Egberts} and main Czech photography portal \href{https://fotoaparat.cz}{Fotoaparat}}
 	{\cvlist{
 		\item Front-end coding
 		\item Front-end team lead
@@ -586,14 +661,14 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item CSS, SASS, LESS, HTML5, JavaScript, GIT, PHP, Nginx, Jenkins
 	}}
 	{\cvlist{
-		\item \href{mailto:adam@webtoad.dev}{Adam Karnet}
+		\item \href{mailto:adam@webtoad.dev}{Adam Karnet, Webtoad}
 	}}
 
 \cvevent
 	{Jun 2013 - Jan 2014}
-	{Front-End and Back-End Developer}
-	{Webnaut.cz}
-	{Building e-commerce websites on top of PrestaShop framework.}
+	{Front-End and Back-End Developer, Prague, Czech Republic}
+	{\href{http://webnaut.cz}{Webnaut.cz}}
+	{Building e-commerce websites in \href{https://prestashop.com/software-ecommerce/}{PrestaShop framework}.}
 	{\cvlist{
 		\item Front-end coding and back-end implementation
 		\item Quality assurance, infrastructure monitoring, centralized logging solutions and documentation
@@ -601,38 +676,36 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 	}}
 	{}
 	{\cvlist{
-		\item \href{mailto:ryvola@webnaut.cz}{Tomáš Ryvola}
+		\item \href{mailto:ryvola@webnaut.cz}{Tomáš Ryvola, Webnaut}
 	}}
 
-\vfill\null
 \cvevent
 	{Jun 2012 - May 2013}
-	{Back-End Developer}
-	{Nume.cz}
+	{Back-End Developer, Prague, Czech Republic}
+	{\href{http://www.nume.cz}{Nume.cz}}
 	{Building an auction portal for numismatics}
 	{\cvlist{
-		\item Back-end programmer in Nette PHP Framework
+		\item Back-end PHP programmer in \href{https://nette.org}{Nette PHP Framework}
 	}}
 	{}
 	{\cvlist{
-		\item \href{mailto:xklima@fel.cvut.cz}{Martin Klima}
+		\item \href{mailto:xklima@fel.cvut.cz}{Martin Klima, CVUT Prague}
 	}}
 
-	
-	
 \cvevent
 	{Sep 2011 - May 2012}
-	{3D Logical Game in Javascript}
-	{Bachelor's thesis for Red Hat, Brno}
-	{Developing a 3D clone of \textit{Berusky 3D} game on top of WebGL technology for running the game on-demand in a web browser.}
+	{3D Logical Game in Javascript, Prague, Czech Republic}
+	{Bachelor's thesis for \href{https://www.redhat.com/en}{Red Hat, Brno}}
+	{Developing a 3D clone of \textit{Berusky 3D} game on top of WebGL technology to support web browser rendering.}
 	{\cvlist{
-		\item Web 3D game accelerated on a graphics card
+		\item Web 3D game accelerated on a GPU
+		\item \href{https://bugsescape.knapovsky.com}{Live game}, \href{https://github.com/knapovsky/bugs-escape-3d-webgl}{Source code on GitHub}
 	}}
 	{\cvlist{
-		\item WebGL, GLSL, JavaScript, Local Storage
+		\item HTML5, CSS, WebGL, GLSL, JavaScript, Local Storage
 	}}
 	{\cvlist{
-		\item  \href{mailto:stransky@redhat.com}{Martin Stranky}, source code available on demand
+		\item  \href{mailto:stransky@redhat.com}{Martin Stranky, Red Hat}
 	}}
 
 
