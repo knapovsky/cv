@@ -5,9 +5,34 @@ Senior Project Engineer | Perth, Western Australia
 
 ---
 
-## Profile
+## Professional Summary
 
-35 years old senior project engineer with strong practical skills in Windows/Linux server deployment and maintenance, networking and web development.
+Senior Project Engineer with 15+ years of experience delivering complex infrastructure projects for managed service providers and enterprise clients. Specialises in Microsoft 365, hybrid cloud, networking, and on-premise infrastructure. Combines deep technical expertise with strong project management and client-facing skills. Passionate about building reliable, secure, and automated systems.
+
+---
+
+## Core Technical Competencies
+
+**Infrastructure & Systems**
+- Microsoft Windows Server, Active Directory, Hyper-V
+- VMware ESXi, XCP-ng, Proxmox VE
+- Linux (Ubuntu, Debian, Rocky, Arch)
+- Docker, Kubernetes basics, Ansible
+
+**Microsoft 365 & Cloud**
+- Microsoft 365 (Intune, SharePoint, Teams, Exchange Online)
+- Microsoft Azure (IaaS, networking, identity)
+- Migration projects (on-prem → cloud)
+
+**Networking & Security**
+- UniFi, pfSense, Fortinet, Cisco
+- Sophos Firewall, VPNs, site-to-site connectivity
+- Tailscale / Headscale, WireGuard
+
+**Development & Automation**
+- PowerShell, Python, Bash
+- Web development (WordPress, React, PHP, JavaScript)
+- Infrastructure as Code mindset
 
 ---
 
@@ -158,6 +183,21 @@ Developed a 3D clone of the Berusky game using WebGL technology for browser rend
 - **IELTS 8.5** (British Council)
 - **EFR (Emergency First Response)** – PADI
 - Driving Licence (A, B) – Australia
+
+---
+
+## Languages
+
+- **Czech** — Native
+- **English** — C1 (CAE) / IELTS 8.5 — Professional working proficiency
+
+---
+
+## Notable Projects & Interests
+
+- **Homelab Infrastructure** — Multi-node Proxmox cluster with GPU passthrough, UniFi networking, Headscale (self-hosted Tailscale), and various LXCs for AI workloads.
+- **Self-hosting & Automation** — Running and maintaining services such as ERPNext, Gitea, OpenWebUI, Home Assistant, and custom automation tooling.
+- **Local AI & LLMs** — Experimenting with local large language models and agent frameworks.
 
 ---
 
