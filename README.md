@@ -206,30 +206,26 @@ Developed a 3D clone of the Berusky game using WebGL technology for browser rend
 ```
 cv/
 ├── README.md
-├── src/
-│   ├── cv.tex          # Authoritative LaTeX source
-│   └── cv.md
+├── cv.tex              # Main LaTeX source
 ├── assets/             # Profile photos
-└── exports/            # Polished final versions
-    ├── 2025-08-22 - Martin Knapovsky - CV.pdf   ← Latest
-    ├── 2024-03-20 - CV.docx
-    └── ...
+└── .gitignore
 ```
+
+This repository contains only the source files. Final PDFs and DOCX exports are **not** stored here.
 
 ---
 
-## Latest Version
+## Latest Source
 
-- **PDF**: `exports/2025-08-22 - Martin Knapovsky - CV.pdf`
-- **Source**: `src/cv.tex` (last updated 23 Aug 2025)
+- **Source**: `cv.tex` (last updated 23 Aug 2025)
 
 ---
 
 ## Maintenance
 
-1. Edit `src/cv.tex`
+1. Edit `cv.tex`
 2. Compile with XeLaTeX
-3. Export final PDF/DOCX to `exports/` using date-based naming
+3. Export final PDF/DOCX manually when needed (do not commit exports)
 4. Update this README when major changes occur
 5. Commit and push
 
