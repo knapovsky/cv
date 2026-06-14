@@ -1,0 +1,722 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2019 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and don't use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+% we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xstring, xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT BASICS
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+%\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}
+
+% clickable links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=maincol,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+%\let\orighref\href
+%\renewcommand{\href}[2]{\orighref{#1}{#2\,\faExternalLink}}
+
+%----------------------------------------------------------------------------------------
+%	FONT AWESOME ICONS
+%---------------------------------------------------------------------------------------- 
+
+% include the fontawesome icon set
+\usepackage{fontawesome}
+
+% use to vertically center content
+% credits to: http://tex.stackexchange.com/questions/7219/how-to-vertically-center-two-images-next-to-each-other
+\newcommand{\vcenteredinclude}[1]{\begingroup
+\setbox0=\hbox{\includegraphics{#1}}%
+\parbox{\wd0}{\box0}\endgroup}
+
+% use to vertically center content
+% credits to: http://tex.stackexchange.com/questions/7219/how-to-vertically-center-two-images-next-to-each-other
+\newcommand*{\vcenteredhbox}[1]{\begingroup
+\setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
+
+% icon shortcut
+\newcommand{\icon}[3] { 							
+	\makebox(#2, #2){\textcolor{maincol}{\csname fa#1\endcsname}}
+}	
+
+% icon with text shortcut
+\newcommand{\icontext}[4]{ 						
+	\vcenteredhbox{\icon{#1}{#2}{#3}}  \hspace{2pt}  \parbox{0.9\mpwidth}{\textcolor{#4}{#3}}
+}
+
+% icon with website url
+\newcommand{\iconhref}[5]{ 						
+    \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{#4}{\textcolor{#5}{#3}}
+}
+
+% icon with email link
+\newcommand{\iconemail}[5]{ 						
+    \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{mailto:#4}{\textcolor{#5}{#3}}
+}
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+% page outer frames (debug-only)
+% \usepackage{showframe}		
+
+% we use paracol to display breakable two columns
+\usepackage{paracol}
+
+% define page styles using geometry
+\usepackage[a4paper]{geometry}
+
+% remove all possible margins
+\geometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+
+\usepackage{fancyhdr}
+\pagestyle{empty}
+
+% space between header and content
+% \setlength{\headheight}{0pt}
+
+% indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+% extended aligning of tabular cells
+\usepackage{array}
+
+% custom column right-align with fixed width
+% use like p{size} but via x{size}
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+% use this for floating figures
+% \usepackage{wrapfig}
+% \usepackage{float}
+% \floatstyle{boxed} 
+% \restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds, mindmap, trees}
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+\usepackage{transparent}
+\usepackage{color}
+
+% primary color
+\definecolor{maincol}{HTML}{00a7e5}
+
+% accent color, secondary
+% \definecolor{accentcol}{RGB}{ 250, 150, 10 }
+
+% dark color
+\definecolor{darkcol}{RGB}{ 70, 70, 70 }
+
+% light color
+\definecolor{lightcol}{RGB}{245,245,245}
+
+
+% Package for links, must be the last package used
+\usepackage[hidelinks]{hyperref}
+
+% returns minipage width minus two times \fboxsep
+% to keep padding included in width calculations
+% can also be used for other boxes / environments
+\newcommand{\mpwidth}{\linewidth-\fboxsep-\fboxsep}
+	
+
+
+%============================================================================%
+%
+%	CV COMMANDS
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+%	 CV LIST
+%----------------------------------------------------------------------------------------
+
+% renders a standard latex list but abstracts away the environment definition (begin/end)
+\newcommand{\cvlist}[1] {
+	\begin{itemize}{#1}\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV TEXT
+%----------------------------------------------------------------------------------------
+
+% base class to wrap any text based stuff here. Renders like a paragraph.
+% Allows complex commands to be passed, too.
+% param 1: *any
+\newcommand{\cvtext}[1] {
+	\begin{tabular*}{1\mpwidth}{p{0.98\mpwidth}}
+		\parbox{1\mpwidth}{#1}
+	\end{tabular*}
+}
+
+%----------------------------------------------------------------------------------------
+%	CV SECTION
+%----------------------------------------------------------------------------------------
+
+% Renders a a CV section headline with a nice underline in main color.
+% param 1: section title
+\newcommand{\cvsection}[1] {
+	\vspace{14pt}
+	\cvtext{
+		\textbf{\LARGE{\textcolor{darkcol}{\uppercase{#1}}}}\\[-4pt]
+		\textcolor{maincol}{ \rule{0.1\textwidth}{2pt} } \\
+	}
+}
+
+%----------------------------------------------------------------------------------------
+%	META SKILL
+%----------------------------------------------------------------------------------------
+
+% Renders a progress-bar to indicate a certain skill in percent.
+% param 1: name of the skill / tech / etc.
+% param 2: level (for example in years)
+% param 3: percent, values range from 0 to 1
+\newcommand{\cvskill}[3] {
+	\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
+ 		\textcolor{black}{\textbf{#1}} & \textcolor{maincol}{#2}\\
+	\end{tabular*}%
+	
+	\hspace{4pt}
+	\begin{tikzpicture}[scale=1,rounded corners=2pt,very thin]
+		\fill [lightcol] (0,0) rectangle (1\mpwidth, 0.15);
+		\fill [maincol] (0,0) rectangle (#3\mpwidth, 0.15);
+  	\end{tikzpicture}%
+}
+
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% Renders a table and a paragraph (cvtext) wrapped in a parbox (to ensure minimum content
+% is glued together when a pagebreak appears).
+% Additional Information can be passed in text or list form (or other environments).
+% the work you did
+% param 1: time-frame i.e. Sep 14 - Jan 15 etc.
+% param 2:	 event name (job position etc.)
+% param 3: Customer, Employer, Industry
+% param 4: Short description
+% param 5: work done (optional)
+% param 6: technologies include (optional)
+% param 7: achievements (optional)
+\newcommand{\cvevent}[7] {
+	
+	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
+	% if you need more control on page breaks, remove the parbox
+	\parbox{\mpwidth}{
+		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
+	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.35\mpwidth]{\textcolor{white}{#1}}} \\
+			\textcolor{maincol}{\textbf{#3}} & \\
+		\end{tabular*}\\[8pt]
+
+		\ifthenelse{\isempty{#4}}{}{
+			\cvtext{#4}
+		}
+	}
+
+	\ifthenelse{\isempty{#5}}{}{
+		%\vspace{5pt}
+		{#5}
+	}
+
+	\ifthenelse{\isempty{#6}}{}{
+		\cvtext{\textbf{Technologies}}
+		{#6}
+	}
+
+	\ifthenelse{\isempty{#7}}{}{
+		\cvtext{\textbf{References}}
+		{#7}
+	}
+	\vspace{10pt}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV META EVENT
+%----------------------------------------------------------------------------------------
+
+% Renders a CV event on the sidebar
+% param 1: title
+% param 2: subtitle (optional)
+% param 3: customer, employer, etc,. (optional)
+% param 4: info text (optional)
+\newcommand{\cvmetaevent}[4] {
+	\textcolor{maincol} {\cvtext{\textbf{\begin{flushleft}#1\end{flushleft}}}}
+
+	\ifthenelse{\isempty{#2}}{}{
+	\textcolor{darkcol} {\cvtext{\textbf{#2}} }
+	}
+	\ifthenelse{\isempty{#3}}{}{
+		\cvtext{{ \textcolor{darkcol} {#3} }}
+	}
+
+%	\cvtext{#4}\\[14pt]
+}
+
+%---------------------------------------------------------------------------------------
+%	QR CODE
+%----------------------------------------------------------------------------------------
+
+% Renders a qrcode image (centered, relative to the parentwidth)
+% param 1: percent width, from 0 to 1
+\newcommand{\cvqrcode}[1] {
+	\begin{center}
+		\includegraphics[width={#1}\mpwidth]{qrcode}
+	\end{center}
+}
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+\columnratio{0.31}
+\setlength{\columnsep}{2.2em}
+\setlength{\columnseprule}{4pt}
+\colseprulecolor{lightcol}
+\begin{paracol}{2}
+\begin{leftcolumn}
+%---------------------------------------------------------------------------------------
+%	META IMAGE
+%----------------------------------------------------------------------------------------
+\includegraphics[width=\linewidth]{profile.jpg}	%trimming relative to image size
+
+%---------------------------------------------------------------------------------------
+%	META SKILLS
+%----------------------------------------------------------------------------------------
+\cvsection{MAIN SKILLS}
+
+\cvskill{HTML/CSS/SASS/LESS} {21 yrs} {0.9} \\[-2pt]
+
+\cvskill{Computer Networking} {21 yrs} {0.8} \\[-2pt]
+
+\cvskill{Linux/Windows Server} {15 yrs} {0.8} \\[-2pt]
+
+\cvskill{Wordpress} {16 yrs} {0.8} \\[-2pt]
+
+\cvskill{Hypervisors} {12 yrs} {0.8} \\[-2pt]
+
+\cvskill{Docker} {6 yrs} {0.7} \\[-2pt]
+
+\cvskill{HW (Building, Repairs)} {15 yrs} {0.6} \\[-2pt]
+
+\cvskill{JavaScript, Python} {11 yrs} {0.6} \\[-2pt]
+
+\cvskill{C, C++, Java, PHP} {17 yrs} {0.5} \\[-2pt]
+
+\cvskill{React} {2 yrs} {0.3} \\[-2pt]
+
+
+
+\vfill\null
+\cvsection{CONTACT}
+	
+\icontext{MapMarker}{12}{63 Walcott St\\6050 Mount Lawley, WA}{black}\\[6pt]
+\icontext{Phone}{12}{+61 475 721 200}{black}\\[6pt]
+\icontext{Envelope}{12}{\href{mailto:martin@knapovsky.com}{martin@knapovsky.com}}{black}\\[6pt]
+\icontext{Globe}{12}{\href{https://www.knapovsky.com}{knapovsky.com}}{black}\\[6pt]
+\icontext{Github}{12}{\href{https://github.com/knapovsky}{knapovsky}}{black}\\[6pt]
+
+%\vfill\null
+%\cvqrcode{0.7}
+
+%---------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+%\newpage
+\cvsection{EDUCATION}
+
+\cvmetaevent
+{2021 - 2022}
+{Advanced Diploma of Leadership and Management}
+{Albright Institute Melbourne}
+
+\cvmetaevent
+{2014 - 2017}
+{Ing. Cognitive Informatics}
+{University of Economics, Prague}
+{The primary goal of cognitive informatics is to develop computing systems that work best with how humans process information, creating more seamless human-systems integration. It is an interdisciplinary field that connects computer science, artificial intelligence, machine learning and interface design with human anatomy, physiology, neurology, psychology and philosophy.
+
+In the master thesis a reverse engineering of Google search algorithms was done to show how to deliver accurate answer based on data collection about the user. 
+
+Cognitive informatics was my major field of study, as a minor field I've chosen Philosophy where I've been studying about the theory of mind. The minor field of study was finished by a thesis concerning artificial intelligence and it's future implications. 
+}
+
+\cvmetaevent
+{2008 - 2012}
+{Bc. Informatics}
+{University of Technology, Brno}
+{I've learned basics of many fields of IT - programming in languages like C, C++, Java, Python, Perl, using several types of databases, implementing algorithms, patterns, running simulations, rendering 3D graphics, analyzing voice, designing and testing interfaces, computer networking etc.
+The topic of the bachelor's thesis was to create a 3D game that would run in a web browser and that would use a graphics card via WebGL technology.}
+
+%\vfill\null
+%\cvqrcode{0.7}
+
+%---------------------------------------------------------------------------------------
+%	CERTIFICATION
+%----------------------------------------------------------------------------------------
+%\newpage
+\cvsection{CERTIFICATIONS}
+
+\cvmetaevent
+{CCNA Exploration: Network Fundamentals}
+{Cisco}
+{}
+{}
+
+\cvmetaevent
+{CCNA Exploration: Routing Protocols and Concepts}
+{Cisco}
+{}
+{}
+
+\cvmetaevent
+{CCNA Exploration: LAN Switching and Wireless}
+{Cisco}
+{}
+{}
+
+
+\cvmetaevent
+{CCNA Exploration: Accessing the WAN}
+{Cisco}
+{}
+{}
+
+%\cvmetaevent
+%{First Aid Certificate}
+%{Red Cross Czech Republic}
+%{}
+%{}
+
+\cvmetaevent
+{EFR (Emergency First Response)}
+{PADI}
+{}
+{}
+
+\cvmetaevent
+{Driving License A, B}
+{AU}
+{}
+{}
+
+%\cvmetaevent
+%{TEFL - Teaching English as a foreign language}
+%{Global TEFL}
+%{}
+%{}
+
+\cvmetaevent
+{CAE - C1}
+{Cambridge English}
+{}
+{}
+
+\cvmetaevent
+{IELTS 8.5 English Certification}
+{British Council}
+{}
+{}
+
+\cvmetaevent
+{Sophos Firewall Certified Engineer v 19.5 (ET80)}
+{Sophos}
+{}
+{}
+
+\cvmetaevent
+{Sophos Firewall Certified Technician v 19.5 (S80)}
+{Sophos}
+{}
+{}
+
+\cvmetaevent
+{3CX Advanced Certified Engineer}
+{3CX}
+{}
+{}
+
+\vfill
+%\cvqrcode{0.7}
+
+%\newpage
+\mbox{} % hotfix to place qrcode on the bottom when there are not other elements
+\vfill
+%\cvqrcode{0.7}
+
+\end{leftcolumn}
+\begin{rightcolumn}
+%---------------------------------------------------------------------------------------
+%	TITLE  HEADER
+%----------------------------------------------------------------------------------------
+\fcolorbox{white}{darkcol}{\begin{minipage}[c][3.5cm][c]{1\mpwidth}
+	\begin {center}
+		\Huge{ \textbf{ \textcolor{white}{ \uppercase{ ING. MARTIN KNAPOVSKÝ } } } } \\[-20pt]
+		\textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[4pt]
+		\large{ \textcolor{white} {Curriculum Vitae} }
+	\end {center}
+\end{minipage}} \\[14pt]
+\vspace{-12pt}
+
+%---------------------------------------------------------------------------------------
+%	PROFILE
+
+%----------------------------------------------------------------------------------------
+\cvsection{PROFILE}
+
+\cvtext{36 years old senior IT project engineer with strong practical skills in Windows/Linux server deployment and maintenance, networking and web development.}
+
+%---------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsection{WORK EXPERIENCE}
+
+\cvevent
+	{Jul 2023 - NOW}
+	{Senior Project Engineer, Perth, WA, Australia}
+	{Newtrend IT}
+	{Planning, managing and implementing projects for MSP in Perth}
+	{\cvlist{
+		\item Network infrastructure installation, upgrades, redesign
+		\item Phone systems instalation, migration
+		\item Cloud migrations
+		\item SharePoint sites management
+		\item New company office setups, site to site connections
+		\item New Microsoft 365 tenant setups
+		\item Bulding servers, installing/managing hypervisors
+		\item Server OS and services installations, virtual machine migrations
+		\item Installations of terminal servers, file servers, database servers, etc. 
+		\item Microsoft Azure infrastructure development
+		\item Remote site maintenance (\href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://holdfastaust.com.au}{Holdfast}, \href{http://mccorrybrown.com.au}{McCorry Brown})
+	}}
+	{\cvlist {
+		\item Microsoft Windows/Server, Linux, SharePoint, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV, XCP-ng, pfSense, Fortinet, Fortigate, Cisco, 3CX phone system}}
+	{\cvlist {
+		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}, \href{mailto:adele.gott@studioschools.edu.au}{Adele Gott, Principal of Studio Schools Australia}
+		\item \href{https://www.newtowntoyota.com.au}{Toyota New Town}, \href{https://instantproducts.com.au}{Instant Products Group}, \href{http://gmminingelectrics.com.au}{GM Mining Electrics}, \href{https://www.linkedin.com/company/polaris-engineering-services-pty-ltd/?originalSubdomain=au}{Polaris Engineering}, \href{https://xpressfreightmanagement.com.au}{Xpress Freight Management}
+	}}
+
+\cvevent
+	{Jan 2023 - Jun 2023}
+	{Technical Onsite Analyst, Perth, WA, Australia}
+	{Newtrend IT}
+	{Mobile technician role for one of the biggest managed service providers in Perth, WA}
+	{\cvlist{
+		\item System and network administration
+		\item Managing users in on-premise/cloud environment
+		\item Asset management
+		\item Hardware installations, upgrades and repairs on-site
+		\item Responding to service outages
+		\item On-site technician in remote areas
+	}}
+	{\cvlist {
+		\item Microsoft Windows/Server, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV
+	}}
+	{\cvlist {
+		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}
+		\item \href{https://peoplekind.org.au}{PeopleKind Group}, \href{https://ruah.org.au}{Ruah Community Services}, \href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://foraco.com}{Foraco}
+	}}
+
+\cvevent
+	{Feb 2017 - NOW}
+	{IT Consultant, Global}
+	{Freelance}
+	{As a freelancer I've helped many companies to design and implement their complete digital identity. I've worked in various environments in UK, Czech Republic, Iceland, New Zealand, Australia, Malaysia and Indonesia.}
+	{\cvlist{
+		\item Website development - Wordpress CMS, React framework
+		\item Deployment of cloud services like encrypted private email, cloud storage, git, private password managers, CRM, etc.
+		\item Linux/FreeBSD/Windows system administration and website hosting
+		\item Graphical design
+		\item Commercial photography and videography
+		\item Marketing and SEO
+		\item PC building, HW repairs
+		\item Network infrastructure planning and implementation
+	}}
+	{\cvlist {
+		\item Docker, Kubernetes, Ansible, Python, Wordpress, React, SASS, HTML5, JavaScript, GIT, PHP, Nginx, Microsoft Azure, VMWare ESXi, XCP-ng, Proxmox, Sophos, pfSense, Cisco IOS, Unifi, OpenWRT, Tailgate/Wireguard
+	}}
+	{\cvlist {
+		\item \href{https://www.nejenhra.cz}{NejenHra}, \href{https://lacasamiarestaurant.co.uk}{La Casa Mia}, \href{https://auto.kolexcom.cz}{KolexCOM}, \href{https://www.oxfordgroup.cz}{Oxford Group}, \href{https://perthdishwashers.com.au}{Perth Dishwashers}, \href{https://www.papafeta.com.au}{Papa Feta Ouzeria}
+	}}
+	
+\cvevent
+	{Sep 2015 - Feb 2017}
+	{Research Assistant, Prague, Czech Republic}
+	{University of Economics}
+	{I've learned how to coordinate group of people working on various academic projects}
+	{\cvlist{
+		\item Communication with the government of Czech Republic
+		\item University project management
+		\item Coordination of student activities
+		\item Maintenance of existing infrastructure
+	}}
+	{\cvlist {
+		\item Microsoft Project, ERP, Team leading
+	}}
+	{\cvlist {
+		\item \href{mailto:vaclav.repa@vse.cz}{prof. Ing. Václav Řepa, CSc., VSE Prague}
+	}}
+
+\cvevent
+	{Jan 2014 - Jan 2015}
+	{Front-End Developer, Prague, Czech Republic}
+	{\href{https://webtoad.cz}{Webtoad.cz}}
+	{Responsible for design and implementation of user interfaces for custom web projects built on top of \href{https://nette.org}{Nette PHP framework}. Working for international companies like \href{https://www.douwe-egberts.com}{Douwe Egberts} and main Czech photography portal \href{https://fotoaparat.cz}{Fotoaparat}}
+	{\cvlist{
+		\item Front-end coding
+		\item Front-end team lead
+		\item Quality assurance and documentation
+	}}
+	{\cvlist {
+		\item CSS, SASS, LESS, HTML5, JavaScript, GIT, PHP, Nginx, Jenkins
+	}}
+	{\cvlist{
+		\item \href{mailto:adam@webtoad.dev}{Adam Karnet, Webtoad}
+	}}
+
+\cvevent
+	{Jun 2013 - Jan 2014}
+	{Front-End and Back-End Developer, Prague, Czech Republic}
+	{\href{http://webnaut.cz}{Webnaut.cz}}
+	{Building e-commerce websites in \href{https://prestashop.com/software-ecommerce/}{PrestaShop framework}.}
+	{\cvlist{
+		\item Front-end coding and back-end implementation
+		\item Quality assurance, infrastructure monitoring, centralized logging solutions and documentation
+		\item Custom reusable modules for PrestaShop
+	}}
+	{}
+	{\cvlist{
+		\item \href{mailto:ryvola@webnaut.cz}{Tomáš Ryvola, Webnaut}
+	}}
+
+\cvevent
+	{Jun 2012 - May 2013}
+	{Back-End Developer, Prague, Czech Republic}
+	{\href{http://www.nume.cz}{Nume.cz}}
+	{Building an auction portal for numismatics}
+	{\cvlist{
+		\item Back-end PHP programmer in \href{https://nette.org}{Nette PHP Framework}
+	}}
+	{}
+	{\cvlist{
+		\item \href{mailto:xklima@fel.cvut.cz}{Martin Klima, CVUT Prague}
+	}}
+
+\cvevent
+	{Sep 2011 - May 2012}
+	{3D Logical Game in Javascript, Prague, Czech Republic}
+	{Bachelor's thesis for \href{https://www.redhat.com/en}{Red Hat, Brno}}
+	{Developing a 3D clone of \textit{Berusky 3D} game on top of WebGL technology to support web browser rendering.}
+	{\cvlist{
+		\item Web 3D game accelerated on a GPU
+		\item \href{https://bugsescape.knapovsky.com}{Live game}, \href{https://github.com/knapovsky/bugs-escape-3d-webgl}{Source code on GitHub}
+	}}
+	{\cvlist{
+		\item HTML5, CSS, WebGL, GLSL, JavaScript, Local Storage
+	}}
+	{\cvlist{
+		\item  \href{mailto:stransky@redhat.com}{Martin Stranky, Red Hat}
+	}}
+
+
+% hotfixes to create fake-space to ensure the whole height is used
+\mbox{}
+\vfill
+\mbox{}
+\vfill
+\mbox{}
+\vfill
+\mbox{}
+\end{rightcolumn}
+\end{paracol}
+\end{document}
