@@ -1,8 +1,13 @@
 .DS_Store
 *.synctex.gz
+cv-private.tex
+references.tex
+private/
 *.aux
 *.log
 *.out
 *.toc
 *.pdf
 *.docx
+*.fls
+*.fdb_latexmk

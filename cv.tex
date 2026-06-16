@@ -9,7 +9,7 @@
 %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 %	copies of the Software, and to permit persons to whom the Software is
 %	furnished to do so, subject to the following conditions:
-%	
+%
 %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -17,7 +17,7 @@
 %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %	THE SOFTWARE.
-%	
+%
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -29,7 +29,7 @@
 %============================================================================%
 
 %we use article class because we want to fully customize the page and don't use a cv template
-\documentclass[10pt,A4]{article}	
+\documentclass[10pt,A4]{article}
 
 
 %----------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 %----------------------------------------------------------------------------------------
 
 % we use utf8 since we want to build from any machine
-\usepackage[utf8]{inputenc}		
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -59,10 +59,10 @@
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-\usepackage[thin]{roboto} 
+\usepackage[thin]{roboto}
 
 % set font default
-\renewcommand*\familydefault{\sfdefault} 	
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
 % more font size definitions
@@ -73,7 +73,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=maincol,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=cyan,
     pdftitle={Overleaf Example},
     pdfpagemode=FullScreen,
@@ -83,7 +83,7 @@
 
 %----------------------------------------------------------------------------------------
 %	FONT AWESOME ICONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % include the fontawesome icon set
 \usepackage{fontawesome}
@@ -100,22 +100,22 @@
 \setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
 
 % icon shortcut
-\newcommand{\icon}[3] { 							
+\newcommand{\icon}[3] {
 	\makebox(#2, #2){\textcolor{maincol}{\csname fa#1\endcsname}}
-}	
+}
 
 % icon with text shortcut
-\newcommand{\icontext}[4]{ 						
+\newcommand{\icontext}[4]{
 	\vcenteredhbox{\icon{#1}{#2}{#3}}  \hspace{2pt}  \parbox{0.9\mpwidth}{\textcolor{#4}{#3}}
 }
 
 % icon with website url
-\newcommand{\iconhref}[5]{ 						
+\newcommand{\iconhref}[5]{
     \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{#4}{\textcolor{#5}{#3}}
 }
 
 % icon with email link
-\newcommand{\iconemail}[5]{ 						
+\newcommand{\iconemail}[5]{
     \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{mailto:#4}{\textcolor{#5}{#3}}
 }
 
@@ -124,7 +124,7 @@
 %----------------------------------------------------------------------------------------
 
 % page outer frames (debug-only)
-% \usepackage{showframe}		
+% \usepackage{showframe}
 
 % we use paracol to display breakable two columns
 \usepackage{paracol}
@@ -146,7 +146,7 @@
 
 %----------------------------------------------------------------------------------------
 %	TABLE /ARRAY DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % extended aligning of tabular cells
 \usepackage{array}
@@ -159,7 +159,7 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 %for header image
 \usepackage{graphicx}
@@ -167,16 +167,16 @@
 % use this for floating figures
 % \usepackage{wrapfig}
 % \usepackage{float}
-% \floatstyle{boxed} 
+% \floatstyle{boxed}
 % \restylefloat{figure}
 
-%for drawing graphics		
-\usepackage{tikz}				
+%for drawing graphics
+\usepackage{tikz}
 \usetikzlibrary{shapes, backgrounds, mindmap, trees}
 
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 \usepackage{transparent}
 \usepackage{color}
 
@@ -200,7 +200,7 @@
 % to keep padding included in width calculations
 % can also be used for other boxes / environments
 \newcommand{\mpwidth}{\linewidth-\fboxsep-\fboxsep}
-	
+
 
 
 %============================================================================%
@@ -257,7 +257,7 @@
 	\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
  		\textcolor{black}{\textbf{#1}} & \textcolor{maincol}{#2}\\
 	\end{tabular*}%
-	
+
 	\hspace{4pt}
 	\begin{tikzpicture}[scale=1,rounded corners=2pt,very thin]
 		\fill [lightcol] (0,0) rectangle (1\mpwidth, 0.15);
@@ -282,7 +282,7 @@
 % param 6: technologies include (optional)
 % param 7: achievements (optional)
 \newcommand{\cvevent}[7] {
-	
+
 	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
@@ -398,8 +398,8 @@
 
 \vfill\null
 \cvsection{CONTACT}
-	
-\icontext{MapMarker}{12}{63 Walcott St\\6050 Mount Lawley, WA}{black}\\[6pt]
+
+\icontext{MapMarker}{12}{Perth, Western Australia}{black}\\[6pt]
 \icontext{Phone}{12}{+61 475 721 200}{black}\\[6pt]
 \icontext{Envelope}{12}{\href{mailto:martin@knapovsky.com}{martin@knapovsky.com}}{black}\\[6pt]
 \icontext{Globe}{12}{\href{https://www.knapovsky.com}{knapovsky.com}}{black}\\[6pt]
@@ -425,9 +425,9 @@
 {University of Economics, Prague}
 {The primary goal of cognitive informatics is to develop computing systems that work best with how humans process information, creating more seamless human-systems integration. It is an interdisciplinary field that connects computer science, artificial intelligence, machine learning and interface design with human anatomy, physiology, neurology, psychology and philosophy.
 
-In the master thesis a reverse engineering of Google search algorithms was done to show how to deliver accurate answer based on data collection about the user. 
+In the master thesis a reverse engineering of Google search algorithms was done to show how to deliver accurate answer based on data collection about the user.
 
-Cognitive informatics was my major field of study, as a minor field I've chosen Philosophy where I've been studying about the theory of mind. The minor field of study was finished by a thesis concerning artificial intelligence and it's future implications. 
+Cognitive informatics was my major field of study, as a minor field I've chosen Philosophy where I've been studying about the theory of mind. The minor field of study was finished by a thesis concerning artificial intelligence and it's future implications.
 }
 
 \cvmetaevent
@@ -575,14 +575,14 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item New Microsoft 365 tenant setups
 		\item Bulding servers, installing/managing hypervisors
 		\item Server OS and services installations, virtual machine migrations
-		\item Installations of terminal servers, file servers, database servers, etc. 
+		\item Installations of terminal servers, file servers, database servers, etc.
 		\item Microsoft Azure infrastructure development
 		\item Remote site maintenance (\href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://holdfastaust.com.au}{Holdfast}, \href{http://mccorrybrown.com.au}{McCorry Brown})
 	}}
 	{\cvlist {
 		\item Microsoft Windows/Server, Linux, SharePoint, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV, XCP-ng, pfSense, Fortinet, Fortigate, Cisco, 3CX phone system}}
 	{\cvlist {
-		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}, \href{mailto:adele.gott@studioschools.edu.au}{Adele Gott, Principal of Studio Schools Australia}
+		\item References available on request
 		\item \href{https://www.newtowntoyota.com.au}{Toyota New Town}, \href{https://instantproducts.com.au}{Instant Products Group}, \href{http://gmminingelectrics.com.au}{GM Mining Electrics}, \href{https://www.linkedin.com/company/polaris-engineering-services-pty-ltd/?originalSubdomain=au}{Polaris Engineering}, \href{https://xpressfreightmanagement.com.au}{Xpress Freight Management}
 	}}
 
@@ -603,7 +603,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item Microsoft Windows/Server, Office 365, Intune, Apple MDM, Sophos, Unifi, VMWare ESXi, HyperV
 	}}
 	{\cvlist {
-		\item \href{mailto:mitchell@newtrend.com.au}{Mitchell Rando, Newtrend IT}
+		\item References available on request
 		\item \href{https://peoplekind.org.au}{PeopleKind Group}, \href{https://ruah.org.au}{Ruah Community Services}, \href{https://www.studioschools.edu.au}{Studio Schools Australia}, \href{https://foraco.com}{Foraco}
 	}}
 
@@ -628,7 +628,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 	{\cvlist {
 		\item \href{https://www.nejenhra.cz}{NejenHra}, \href{https://lacasamiarestaurant.co.uk}{La Casa Mia}, \href{https://auto.kolexcom.cz}{KolexCOM}, \href{https://www.oxfordgroup.cz}{Oxford Group}, \href{https://perthdishwashers.com.au}{Perth Dishwashers}, \href{https://www.papafeta.com.au}{Papa Feta Ouzeria}
 	}}
-	
+
 \cvevent
 	{Sep 2015 - Feb 2017}
 	{Research Assistant, Prague, Czech Republic}
@@ -644,7 +644,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item Microsoft Project, ERP, Team leading
 	}}
 	{\cvlist {
-		\item \href{mailto:vaclav.repa@vse.cz}{prof. Ing. Václav Řepa, CSc., VSE Prague}
+		\item References available on request
 	}}
 
 \cvevent
@@ -661,7 +661,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item CSS, SASS, LESS, HTML5, JavaScript, GIT, PHP, Nginx, Jenkins
 	}}
 	{\cvlist{
-		\item \href{mailto:adam@webtoad.dev}{Adam Karnet, Webtoad}
+		\item References available on request
 	}}
 
 \cvevent
@@ -676,7 +676,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 	}}
 	{}
 	{\cvlist{
-		\item \href{mailto:ryvola@webnaut.cz}{Tomáš Ryvola, Webnaut}
+		\item References available on request
 	}}
 
 \cvevent
@@ -689,7 +689,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 	}}
 	{}
 	{\cvlist{
-		\item \href{mailto:xklima@fel.cvut.cz}{Martin Klima, CVUT Prague}
+		\item References available on request
 	}}
 
 \cvevent
@@ -705,7 +705,7 @@ The topic of the bachelor's thesis was to create a 3D game that would run in a w
 		\item HTML5, CSS, WebGL, GLSL, JavaScript, Local Storage
 	}}
 	{\cvlist{
-		\item  \href{mailto:stransky@redhat.com}{Martin Stranky, Red Hat}
+		\item References available on request
 	}}
 
 
